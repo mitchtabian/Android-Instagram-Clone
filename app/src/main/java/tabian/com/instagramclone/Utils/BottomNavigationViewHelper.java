@@ -9,12 +9,12 @@ import android.view.MenuItem;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-import tabian.com.instagramclone.HomeActivity;
-import tabian.com.instagramclone.LikesActivity;
-import tabian.com.instagramclone.ProfileActivity;
+import tabian.com.instagramclone.Home.HomeActivity;
+import tabian.com.instagramclone.Likes.LikesActivity;
+import tabian.com.instagramclone.Profile.ProfileActivity;
 import tabian.com.instagramclone.R;
-import tabian.com.instagramclone.SearchActivity;
-import tabian.com.instagramclone.ShareActivity;
+import tabian.com.instagramclone.Search.SearchActivity;
+import tabian.com.instagramclone.Share.ShareActivity;
 
 /**
  * Created by User on 5/28/2017.
