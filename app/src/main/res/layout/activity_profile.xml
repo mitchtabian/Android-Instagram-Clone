@@ -10,6 +10,8 @@
 
         <include layout="@layout/snippet_top_prolfilebar"/>
 
+
+        <include layout="@layout/layout_bottom_navigation_view"/>
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
