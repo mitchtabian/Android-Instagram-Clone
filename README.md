@@ -22,3 +22,27 @@ the database would roughly look like if you did that. (SQLite is probably fine)<
 
 <p>That would require a <b>TON</b> more code. Setting up the server/website alone would probably be another 20 videos or so. So to keep
 things simple and condensed I will just use Firebase for everything. After all this is an Android Course, not a web development course.</p>
+
+<h2>Lecture Source Code:</h2>
+<ol>
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/2cac213283ceafe3b1c627096065bd11f80d4161'> Getting Started</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/0f0377337204105604e23f08d3939b5be1556684'> Toolbars and NavigationView</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/69743899065c2b921f99dde9a2aabb5c8f8adc70'> Customizing the BottomNavigationView</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/b42ec4471f1a63c8d6463783b23ca558c12381c4'> BottomNavigationView Activities</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/1cbeb887a4e8cab0e319b50d3506cf2977813723'> Organizing Things and Tab-Prep</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/37a7d8091e96bc0316a7f456b4451fb279d797b5'> SectionsPagerAdapter (Home Screen Tabs)</a></li>
+
+</ol>
+
+
+
+
+
+
+
+
