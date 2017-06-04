@@ -37,6 +37,19 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/37a7d8091e96bc0316a7f456b4451fb279d797b5'> SectionsPagerAdapter (Home Screen Tabs)</a></li>
 
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/82996f0a25b98340d4b249eafc904495ea3989ee'> Profile Toolbar and Menu</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/766ec53ac97cef3d4edccec18819bea2a5825be0'> Building the Profile Part 1</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/75567884e79c207bd7ddaf9695cfe6b5cfa0f85f'> Building the Profile Part 2</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/194fbc7e36d15f4ac7656b90d7a3c982ef703a01'> Account Settings Layout</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/07da29439db27d2bb1a725567ce7805d1601564a'> Account Settings Navigation</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/b5b71da913bdd831c341dc825ab5cf9844559b1b'> Account Settings Fragments</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/b29cf20ac12e0d9cda259e3bf0e360ad82544f44'> EditProfile Fragment Layout</a></li>
 </ol>
 
 
