@@ -1,5 +1,5 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-       >
+    >
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -16,24 +16,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="mitch.tabian"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"
-                    android:layout_marginStart="15dp"
-                    android:id="@+id/profileName"/>
-
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_centerVertical="true"
-                    android:id="@+id/profileMenu"
-                    android:src="@drawable/ic_ellipses"/>
+                    android:id="@+id/backArrow"
+                    android:src="@drawable/ic_backarrow"/>
+
+                <TextView
+                    android:layout_toRightOf="@+id/backArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Options"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="5dp"
+                    android:id="@+id/profileName"/>
+
+
 
             </RelativeLayout>
 
