@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
@@ -30,11 +31,13 @@ import tabian.com.instagramclone.Utils.UniversalImageLoader;
 public class ProfileActivity extends AppCompatActivity{
     private static final String TAG = "ProfileActivity";
     private static final int ACTIVITY_NUM = 4;
+    private static final int NUM_GRID_COLUMNS = 3;
 
     private Context mContext = ProfileActivity.this;
 
     private ProgressBar mProgressBar;
     private ImageView profilePhoto;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,6 +52,7 @@ public class ProfileActivity extends AppCompatActivity{
         setProfileImage();
 
         tempGridSetup();
+
     }
 
     private void tempGridSetup(){
@@ -72,6 +76,10 @@ public class ProfileActivity extends AppCompatActivity{
     private void setupImageGrid(ArrayList<String> imgURLs){
         GridView gridView = (GridView) findViewById(R.id.gridView);
 
+        int gridWidth = getResources().getDisplayMetrics().widthPixels;
+        int imageWidth = gridWidth/NUM_GRID_COLUMNS;
+        gridView.setColumnWidth(imageWidth);
+
         GridImageAdapter adapter = new GridImageAdapter(mContext, R.layout.layout_grid_imageview, "", imgURLs);
         gridView.setAdapter(adapter);
     }
@@ -86,6 +94,7 @@ public class ProfileActivity extends AppCompatActivity{
         mProgressBar = (ProgressBar) findViewById(R.id.profileProgressBar);
         mProgressBar.setVisibility(View.GONE);
         profilePhoto = (ImageView) findViewById(R.id.profile_photo);
+
     }
 
     /**
