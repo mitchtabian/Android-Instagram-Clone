@@ -50,6 +50,14 @@ things simple and condensed I will just use Firebase for everything. After all t
 <li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/b5b71da913bdd831c341dc825ab5cf9844559b1b'> Account Settings Fragments</a></li>
 
 <li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/b29cf20ac12e0d9cda259e3bf0e360ad82544f44'> EditProfile Fragment Layout</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/06fbce53308bebfdc215a0d997499cf405443b1b'> Universal Image Loader Config</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/9391edbd31e47ff72773fa2bfe710b086a0046e4'> Testing Images in the User Profile</a></li>
+
+<li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/df348142edcd5e8f76171ad00e5f317f98d19bd5'> Square ImageView Widgets</a></li>
+
+<li>More coming every week!</li>
 </ol>
 
 
