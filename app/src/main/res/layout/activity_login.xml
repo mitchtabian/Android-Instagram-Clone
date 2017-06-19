@@ -85,7 +85,8 @@
         android:textSize="20sp"
         android:layout_alignBottom="@+id/progressBar"
         android:layout_alignRight="@+id/progressBar"
-        android:layout_alignLeft="@+id/progressBar"/>
+        android:layout_alignLeft="@+id/progressBar"
+        android:id="@+id/pleaseWait"/>
 
 </RelativeLayout>
 
