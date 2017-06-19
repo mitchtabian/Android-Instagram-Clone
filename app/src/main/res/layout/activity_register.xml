@@ -12,12 +12,15 @@
     android:paddingRight="25dp"
     >
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="75dp"
-        android:src="@drawable/instagram_logo"
-        android:layout_gravity="center_horizontal"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REGISTER A NEW ACCOUNT"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal"
         android:layout_marginBottom="40dp"/>
+
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -42,6 +45,21 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Full Name"
+            android:id="@+id/input_username"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="Password"
             android:id="@+id/input_password"/>
@@ -52,22 +70,13 @@
     <android.support.v7.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp"
-        android:text="Login"
-        android:id="@+id/btn_login"
+        android:layout_marginTop="25dp"
+        android:text="Register"
+        android:id="@+id/btn_register"
         android:padding="12dp"
         android:background="@drawable/white_rounded_button"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:text="No account yet? Create one"
-        android:gravity="center"
-        android:textSize="16dp"
-        android:id="@+id/link_signup"
-        android:textColor="@color/link_blue"/>
 
 </LinearLayout>
 
