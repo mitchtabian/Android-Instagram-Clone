@@ -43,6 +43,9 @@ dependencies {
     //firebase authentication
     compile 'com.google.firebase:firebase-auth:10.2.6'
 
+    //firebase database
+    compile 'com.google.firebase:firebase-database:10.2.6'
+
 }
 
 //Firebase
