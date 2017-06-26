@@ -11,11 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import tabian.com.instagramclone.R;
+import tabian.com.instagramclone.Utils.FirebaseMethods;
 
 /**
  * Created by User on 6/19/2017.
@@ -35,23 +37,55 @@ public class RegisterActivity extends AppCompatActivity {
     //firebase
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseMethods firebaseMethods;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        mContext = RegisterActivity.this;
+        firebaseMethods = new FirebaseMethods(mContext);
         Log.d(TAG, "onCreate: started.");
 
         initWidgets();
         setupFirebaseAuth();
+        init();
     }
 
+    private void init(){
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                email = mEmail.getText().toString();
+                username = mUsername.getText().toString();
+                password = mPassword.getText().toString();
+
+                if(checkInputs(email, username, password)){
+                    mProgressBar.setVisibility(View.VISIBLE);
+                    loadingPleaseWait.setVisibility(View.VISIBLE);
+
+                    firebaseMethods.registerNewEmail(email, password, username);
+                }
+            }
+        });
+    }
+
+    private boolean checkInputs(String email, String username, String password){
+        Log.d(TAG, "checkInputs: checking inputs for null values.");
+        if(email.equals("") || username.equals("") || password.equals("")){
+            Toast.makeText(mContext, "All fields must be filled out.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
     /**
      * Initialize the activity widgets
      */
     private void initWidgets(){
         Log.d(TAG, "initWidgets: Initializing Widgets.");
         mEmail = (EditText) findViewById(R.id.input_email);
+        mUsername = (EditText) findViewById(R.id.input_username);
+        btnRegister = (Button) findViewById(R.id.btn_register);
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         loadingPleaseWait = (TextView) findViewById(R.id.loadingPleaseWait);
         mPassword = (EditText) findViewById(R.id.input_password);
