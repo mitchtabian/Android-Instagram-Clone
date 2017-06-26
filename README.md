@@ -57,6 +57,22 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://github.com/mitchtabian/Android-Instagram-Clone/tree/df348142edcd5e8f76171ad00e5f317f98d19bd5'> Square ImageView Widgets</a></li>
 
+<li><a href='https://goo.gl/Kf8UN8'> Login Layout</a></li>
+
+<li><a href='https://goo.gl/rCfjWv'> Register Layout</a></li>
+
+<li><a href='https://goo.gl/zTsY17'> Setup Firebase Authentication</a></li>
+
+<li><a href='https://goo.gl/9NmTGC'> Testing Firebase Authentication</a></li>
+
+<li><a href='https://goo.gl/dgWBAF'> Setup Register Activity Widgets</a></li>
+
+<li><a href='https://goo.gl/1Ewh7z'> Register New User with Firebase</a></li>
+
+<li>Firebase Database Structure (no source code) </li>
+
+<li><a href='https://goo.gl/AiqA4A'> Check if Username Already Exists</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
