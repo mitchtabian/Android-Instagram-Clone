@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "318191497561",
-    "firebase_url": "https://instagramclone2-cd474.firebaseio.com",
-    "project_id": "instagramclone2-cd474",
-    "storage_bucket": "instagramclone2-cd474.appspot.com"
+    "project_number": "352531809002",
+    "firebase_url": "https://instagramclone3-b6678.firebaseio.com",
+    "project_id": "instagramclone3-b6678",
+    "storage_bucket": "instagramclone3-b6678.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:318191497561:android:dac77f310048e88b",
+        "mobilesdk_app_id": "1:352531809002:android:d49c650ed5c2c559",
         "android_client_info": {
-          "package_name": "tabian.com.instagramclone"
+          "package_name": "tabian.com.instagramclone2"
         }
       },
       "oauth_client": [
         {
-          "client_id": "318191497561-6i65180hj99pv0l4o2a8bhtlbusp06t1.apps.googleusercontent.com",
+          "client_id": "352531809002-gi64mu16aovb40gf82b1fi2sen302e9h.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "tabian.com.instagramclone",
+            "package_name": "tabian.com.instagramclone2",
             "certificate_hash": "a1282f8c2b490a54cc1d7bdcefea5c630f537950"
           }
         },
         {
-          "client_id": "318191497561-a3ln1o39js8ot3j2mdv8fn9objqoihsj.apps.googleusercontent.com",
+          "client_id": "352531809002-sm8t77fn6vf3177s6kig01tm0bd46clo.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCpGGSLRslL60EFbhgp40sJ5H39C7ZczSs"
+          "current_key": "AIzaSyCJXKgHH5JH7ytTLDSSJ4IeE3iFl5AV7pw"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "318191497561-a3ln1o39js8ot3j2mdv8fn9objqoihsj.apps.googleusercontent.com",
+              "client_id": "352531809002-sm8t77fn6vf3177s6kig01tm0bd46clo.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

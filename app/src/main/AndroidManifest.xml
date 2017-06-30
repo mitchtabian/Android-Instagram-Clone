@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="tabian.com.instagramclone">
+          package="tabian.com.instagramclone2">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -11,20 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Home.HomeActivity">
+        <activity android:name="tabian.com.instagramclone2.Home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Likes.LikesActivity"></activity>
-        <activity android:name=".Profile.ProfileActivity"></activity>
-        <activity android:name=".Search.SearchActivity"></activity>
-        <activity android:name=".Share.ShareActivity"></activity>
-        <activity android:name=".Profile.AccountSettingsActivity"></activity>
-        <activity android:name=".Login.RegisterActivity"></activity>
-        <activity android:name=".Login.LoginActivity"></activity>
+        <activity android:name="tabian.com.instagramclone2.Likes.LikesActivity"></activity>
+        <activity android:name="tabian.com.instagramclone2.Profile.ProfileActivity"></activity>
+        <activity android:name="tabian.com.instagramclone2.Search.SearchActivity"></activity>
+        <activity android:name="tabian.com.instagramclone2.Share.ShareActivity"></activity>
+        <activity android:name="tabian.com.instagramclone2.Profile.AccountSettingsActivity"></activity>
+        <activity android:name="tabian.com.instagramclone2.Login.RegisterActivity"></activity>
+        <activity android:name="tabian.com.instagramclone2.Login.LoginActivity"></activity>
     </application>
 
 </manifest>
