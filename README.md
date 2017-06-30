@@ -83,6 +83,16 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/LQViwp'> Profile Fragment Setup</a></li>
 
+<li><a href='https://goo.gl/dcdw5J'> Retrieving User Data from Firebase</a></li>
+
+<li><a href='https://goo.gl/hzg86h'> Setting Profile Fragment Widgets</a></li>
+
+<li><a href='https://goo.gl/ibo3Hh'> Navigating to EditProfile Fragment</a></li>
+
+<li><a href='https://goo.gl/Yupdcy'> Setting EditProfile Fragment Widgets</a></li>
+
+<li><a href='https://goo.gl/gLgHYX'> Saving User Profile Changes</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
