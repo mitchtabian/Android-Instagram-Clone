@@ -8,16 +8,6 @@
         android:background="@color/white">
 
 
-        <!-- ***********************Top Toolbar***************** -->
-        <RelativeLayout
-            android:id="@+id/relLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
-
-            <include layout="@layout/snippet_top_prolfilebar"/>
-
-        </RelativeLayout>
-
 
         <!-- ********************Middle Section*************************** -->
 
