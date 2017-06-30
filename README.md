@@ -73,6 +73,16 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/AiqA4A'> Check if Username Already Exists</a></li>
 
+<li><a href='https://goo.gl/8D6cSx'> Insert New Data</a></li>
+
+<li><a href='https://goo.gl/y9SJqE'> Email Verificaiton</a></li>
+
+<li><a href='https://goo.gl/ieYAVE'> Enable User Signout</a></li>
+
+<li><a href='https://goo.gl/ReuZZU'> Profile Fragment</a></li>
+
+<li><a href='https://goo.gl/LQViwp'> Profile Fragment Setup</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
