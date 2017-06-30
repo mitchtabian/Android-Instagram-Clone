@@ -7,11 +7,11 @@ package tabian.com.instagramclone.models;
 public class User {
 
     private String user_id;
-    private String phone_number;
+    private long phone_number;
     private String email;
     private String username;
 
-    public User(String user_id, String phone_number, String email, String username) {
+    public User(String user_id, long phone_number, String email, String username) {
         this.user_id = user_id;
         this.phone_number = phone_number;
         this.email = email;
@@ -31,11 +31,11 @@ public class User {
         this.user_id = user_id;
     }
 
-    public String getPhone_number() {
+    public long getPhone_number() {
         return phone_number;
     }
 
-    public void setPhone_number(String phone_number) {
+    public void setPhone_number(long phone_number) {
         this.phone_number = phone_number;
     }
 

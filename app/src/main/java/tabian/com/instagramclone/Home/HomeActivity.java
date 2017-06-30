@@ -47,6 +47,7 @@ public class HomeActivity extends AppCompatActivity {
         setupBottomNavigationView();
         setupViewPager();
 
+
     }
 
 
