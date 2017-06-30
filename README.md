@@ -61,6 +61,8 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/rCfjWv'> Register Layout</a></li>
 
+<li>Get Started with Firebase</li>
+
 <li><a href='https://goo.gl/zTsY17'> Setup Firebase Authentication</a></li>
 
 <li><a href='https://goo.gl/9NmTGC'> Testing Firebase Authentication</a></li>
