@@ -9,6 +9,7 @@
         android:id="@+id/relLayout1">
 
         <!-- gallery toolbar -->
+        <include layout="@layout/snippet_top_gallerytoolbar"/>
 
     </RelativeLayout>
 
