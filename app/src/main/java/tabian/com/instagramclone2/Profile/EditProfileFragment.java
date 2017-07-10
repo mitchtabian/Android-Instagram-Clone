@@ -14,8 +14,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.ProviderQueryResult;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -45,6 +50,64 @@ public class EditProfileFragment extends Fragment implements
     @Override
     public void onConfirmPassword(String password) {
         Log.d(TAG, "onConfirmPassword: got the password: " + password);
+
+        // Get auth credentials from the user for re-authentication. The example below shows
+        // email and password credentials but there are multiple possible providers,
+        // such as GoogleAuthProvider or FacebookAuthProvider.
+        AuthCredential credential = EmailAuthProvider
+                .getCredential(mAuth.getCurrentUser().getEmail(), password);
+
+        ///////////////////// Prompt the user to re-provide their sign-in credentials
+        mAuth.getCurrentUser().reauthenticate(credential)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            Log.d(TAG, "User re-authenticated.");
+
+                            ///////////////////////check to see if the email is not already present in the database
+                            mAuth.fetchProvidersForEmail(mEmail.getText().toString()).addOnCompleteListener(new OnCompleteListener<ProviderQueryResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<ProviderQueryResult> task) {
+                                    if(task.isSuccessful()){
+                                        try{
+                                            if(task.getResult().getProviders().size() == 1){
+                                                Log.d(TAG, "onComplete: that email is already in use.");
+                                                Toast.makeText(getActivity(), "That email is already in use", Toast.LENGTH_SHORT).show();
+                                            }
+                                            else{
+                                                Log.d(TAG, "onComplete: That email is available.");
+
+                                                //////////////////////the email is available so update it
+                                                mAuth.getCurrentUser().updateEmail(mEmail.getText().toString())
+                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                if (task.isSuccessful()) {
+                                                                    Log.d(TAG, "User email address updated.");
+                                                                    Toast.makeText(getActivity(), "email updated", Toast.LENGTH_SHORT).show();
+                                                                    mFirebaseMethods.updateEmail(mEmail.getText().toString());
+                                                                }
+                                                            }
+                                                        });
+                                            }
+                                        }catch (NullPointerException e){
+                                            Log.e(TAG, "onComplete: NullPointerException: "  +e.getMessage() );
+                                        }
+                                    }
+                                }
+                            });
+
+
+
+
+
+                        }else{
+                            Log.d(TAG, "onComplete: re-authentication failed.");
+                        }
+
+                    }
+                });
     }
 
     private static final String TAG = "EditProfileFragment";
