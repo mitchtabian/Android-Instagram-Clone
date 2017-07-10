@@ -14,6 +14,7 @@
     <!-- Firebase database fields -->
     <string name="dbname_users">users</string>
     <string name="dbname_user_account_settings">user_account_settings</string>
+    <string name="field_username">username</string>
 
 
     <!-- Intent Extras -->
@@ -21,5 +22,6 @@
 
     <!-- activity names -->
     <string name="profile_activity">Profile Activity</string>
+
 
 </resources>
