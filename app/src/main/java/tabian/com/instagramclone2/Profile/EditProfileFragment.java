@@ -38,7 +38,14 @@ import tabian.com.instagramclone2.models.UserSettings;
  * Created by User on 6/4/2017.
  */
 
-public class EditProfileFragment extends Fragment {
+public class EditProfileFragment extends Fragment implements
+        ConfirmPasswordDialog.OnConfirmPasswordListener{
+
+
+    @Override
+    public void onConfirmPassword(String password) {
+        Log.d(TAG, "onConfirmPassword: got the password: " + password);
+    }
 
     private static final String TAG = "EditProfileFragment";
 
@@ -127,6 +134,7 @@ public class EditProfileFragment extends Fragment {
             //          -Confirm the password and email
             ConfirmPasswordDialog dialog = new ConfirmPasswordDialog();
             dialog.show(getFragmentManager(), getString(R.string.confirm_password_dialog));
+            dialog.setTargetFragment(EditProfileFragment.this, 1);
 
 
             // step2) check if the email already is registered
@@ -259,4 +267,6 @@ public class EditProfileFragment extends Fragment {
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
+
+
 }
