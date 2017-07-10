@@ -35,6 +35,7 @@
     <!-- strings -->
     <string name="gallery">GALLERY</string>
     <string name="photo">PHOTO</string>
+    <string name="string_open_camera">Open Camera</string>
 
 
 </resources>
