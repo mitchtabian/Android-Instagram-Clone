@@ -29,6 +29,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import tabian.com.instagramclone2.R;
 import tabian.com.instagramclone2.Utils.FirebaseMethods;
 import tabian.com.instagramclone2.Utils.UniversalImageLoader;
+import tabian.com.instagramclone2.dialogs.ConfirmPasswordDialog;
 import tabian.com.instagramclone2.models.User;
 import tabian.com.instagramclone2.models.UserAccountSettings;
 import tabian.com.instagramclone2.models.UserSettings;
@@ -114,34 +115,29 @@ public class EditProfileFragment extends Fragment {
         final long phoneNumber = Long.parseLong(mPhoneNumber.getText().toString());
 
 
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+        //case1: if the user made a change to their username
+        if(!mUserSettings.getUser().getUsername().equals(username)){
+
+            checkIfUsernameExists(username);
+        }
+        //case2: if the user made a change to their email
+        if(!mUserSettings.getUser().getEmail().equals(email)){
+
+            // step1) Reauthenticate
+            //          -Confirm the password and email
+            ConfirmPasswordDialog dialog = new ConfirmPasswordDialog();
+            dialog.show(getFragmentManager(), getString(R.string.confirm_password_dialog));
 
 
-
-                //case1: the user did not change their username
-                if(!mUserSettings.getUser().getUsername().equals(username)){
-
-                    checkIfUsernameExists(username);
-                }
-                //case2: the user changed their username therefore we need to check for uniqueness
-                else{
-
-                }
-
-
-
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+            // step2) check if the email already is registered
+            //          -'fetchProvidersForEmail(String email)'
+            // step3) change the email
+            //          -submit the new email to the database and authentication
+        }
 
     }
+
+
 
     /**
      * Check is @param username already exists in teh database
