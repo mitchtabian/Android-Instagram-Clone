@@ -18,6 +18,10 @@
     <string name="dbname_user_account_settings">user_account_settings</string>
     <string name="field_username">username</string>
     <string name="field_email">email</string>
+    <string name="field_display_name">display_name</string>
+    <string name="field_website">website</string>
+    <string name="field_description">description</string>
+    <string name="field_phone_number">phone_number</string>
 
 
 
