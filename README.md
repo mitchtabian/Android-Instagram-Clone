@@ -95,6 +95,26 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/gLgHYX'> Saving User Profile Changes</a></li>
 
+<li><a href='https://goo.gl/8LgdWM'> Query Firebase Database</a></li>
+
+<li><a href='https://goo.gl/mDeYzA'> Changing Firebase Authenticated Email (part 1)</a></li>
+
+<li><a href='https://goo.gl/uccU2R'> Changing Firebase Authenticated Email (part 2)</a></li>
+
+<li><a href='https://goo.gl/TWtdtr'> Changing Firebase Authenticated Email (part 3)</a></li>
+
+<li><a href='https://goo.gl/j7vXME'> Update User Account Settings</a></li>
+
+<li><a href='https://goo.gl/AqhtLL'> Verifying Permissions for Sharing</a></li>
+
+<li><a href='https://goo.gl/ifPz9N'> ShareActivity Layout and Tabs</a></li>
+
+<li><a href='https://goo.gl/C3ft9K'> Setup Gallery and Photo Fragments</a></li>
+
+<li><a href='https://goo.gl/29ufSk'> Camera Intent</a></li>
+
+<li><a href='https://goo.gl/FKqjXX'> GalleryFragment Layout</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
