@@ -28,6 +28,7 @@
         <activity android:name="tabian.com.instagramclone2.Profile.AccountSettingsActivity"></activity>
         <activity android:name="tabian.com.instagramclone2.Login.RegisterActivity"></activity>
         <activity android:name="tabian.com.instagramclone2.Login.LoginActivity"></activity>
+        <activity android:name=".Share.NextActivity"/>
     </application>
 
 </manifest>

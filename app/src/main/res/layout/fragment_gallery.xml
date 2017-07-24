@@ -46,9 +46,9 @@
             android:layout_height="0dp"
             android:layout_weight="40"
             android:id="@+id/gridView"
-            android:numColumns="5"
-            android:verticalSpacing="1dp"
-            android:horizontalSpacing="1dp"
+            android:numColumns="3"
+            android:verticalSpacing="1.5dp"
+            android:horizontalSpacing="1.5dp"
             android:stretchMode="none"
             android:gravity="center"
             android:layout_marginTop="1dp">
