@@ -1,19 +1,26 @@
 package tabian.com.instagramclone2.Share;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import tabian.com.instagramclone2.R;
+import tabian.com.instagramclone2.Utils.FilePaths;
+import tabian.com.instagramclone2.Utils.FileSearch;
 
 /**
  * Created by User on 5/28/2017.
@@ -30,6 +37,7 @@ public class GalleryFragment extends Fragment {
     private Spinner directorySpinner;
 
     //vars
+    private ArrayList<String> directories;
 
 
     @Nullable
@@ -41,6 +49,7 @@ public class GalleryFragment extends Fragment {
         directorySpinner = (Spinner) view.findViewById(R.id.spinnerDirectory);
         mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         mProgressBar.setVisibility(View.GONE);
+        directories = new ArrayList<>();
         Log.d(TAG, "onCreateView: started.");
 
         ImageView shareClose = (ImageView) view.findViewById(R.id.ivCloseShare);
@@ -63,6 +72,69 @@ public class GalleryFragment extends Fragment {
             }
         });
 
+        init();
+
         return view;
     }
+
+    private void init(){
+        FilePaths filePaths = new FilePaths();
+
+        //check for other folders indide "/storage/emulated/0/pictures"
+        if(FileSearch.getDirectoryPaths(filePaths.PICTURES) != null){
+            directories = FileSearch.getDirectoryPaths(filePaths.PICTURES);
+        }
+
+        directories.add(filePaths.CAMERA);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_spinner_item, directories);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        directorySpinner.setAdapter(adapter);
+
+        directorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Log.d(TAG, "onItemClick: selected: " + directories.get(position));
+
+                //setup our image grid for the directory chosen
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
