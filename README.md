@@ -115,6 +115,14 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/FKqjXX'> GalleryFragment Layout</a></li>
 
+<li><a href='https://goo.gl/9MZRWd'> Phone Directories</a></li>
+
+<li><a href='https://goo.gl/CJaUGM'> ShareActivity GridView</a></li>
+
+<li><a href='https://goo.gl/RgpgN2'> Selected Image to Share</a></li>
+
+<li><a href='https://goo.gl/oRKmRj'> NextActivity Setup</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
