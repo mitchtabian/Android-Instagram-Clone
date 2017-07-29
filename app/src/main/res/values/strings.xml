@@ -25,7 +25,9 @@
     <string name="field_description">description</string>
     <string name="field_phone_number">phone_number</string>
 
-
+    <!-- photo types -->
+    <string name="new_photo">new_photo</string>
+    <string name="profile_photo">profile_photo</string>
 
     <!-- Intent Extras -->
     <string name="calling_activity">calling_activity</string>
