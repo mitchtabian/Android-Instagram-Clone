@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -16,11 +17,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import tabian.com.instagramclone2.R;
 import tabian.com.instagramclone2.Utils.FirebaseMethods;
 import tabian.com.instagramclone2.Utils.UniversalImageLoader;
+import tabian.com.instagramclone2.models.User;
 
 /**
  * Created by User on 7/24/2017.
@@ -39,11 +42,13 @@ public class NextActivity extends AppCompatActivity {
 
     //vars
     private String mAppend = "file:/";
+    private int imageCount = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_next);
+        mFirebaseMethods = new FirebaseMethods(NextActivity.this);
 
         setupFirebaseAuth();
 
@@ -69,6 +74,28 @@ public class NextActivity extends AppCompatActivity {
         setImage();
     }
 
+    private void someMethod(){
+        /*
+            Step 1)
+            Create a data model for Photos
+
+            Step 2)
+            Add properties to the Photo Objects (caption, date, imageUrl, photo_id, tags, user_id)
+
+            Step 3)
+            Count the number of photos that the user already has.
+
+            Step 4)
+            a) Upload the photo to Firebase Storage
+            b) insert into 'photos' node
+            c) insert into 'user_photos' node
+
+         */
+
+
+    }
+
+
     /**
      * gets the image url from the incoming intent and displays the chosen image
      */
@@ -79,7 +106,7 @@ public class NextActivity extends AppCompatActivity {
     }
 
      /*
-    ------------------------------------ Firebase ---------------------------------------------
+     ------------------------------------ Firebase ---------------------------------------------
      */
 
     /**
@@ -90,6 +117,7 @@ public class NextActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         myRef = mFirebaseDatabase.getReference();
+        Log.d(TAG, "onDataChange: image count: " + imageCount);
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -113,6 +141,8 @@ public class NextActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
+                imageCount = mFirebaseMethods.getImageCount(dataSnapshot);
+                Log.d(TAG, "onDataChange: image count: " + imageCount);
 
             }
 
