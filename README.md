@@ -123,6 +123,22 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/oRKmRj'> NextActivity Setup</a></li>
 
+<li>How to upload images to Firebase Storage (no source code)</li>
+
+<li><a href='https://goo.gl/mGZgB5'> Getting the Image Count</a></li>
+
+<li><a href='https://goo.gl/6t157B'> Firebase Storage Reference</a></li>
+
+<li><a href='https://goo.gl/YTU5ND'> Convert Bitmap to Byte Array</a></li>
+
+<li><a href='https://goo.gl/epw8Xa'> Upload Photo to Firebase Storage</a></li>
+
+<li><a href='https://goo.gl/f2RxFS'> Insert Photo into Firebase Database</a></li>
+
+<li><a href='https://goo.gl/BEZLor'> Changing Profile Photo</a></li>
+
+<li><a href='https://goo.gl/iq2ZTH'> Upload New Profile Photo to Firebase Storage</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
