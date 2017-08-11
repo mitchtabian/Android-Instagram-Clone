@@ -1,10 +1,12 @@
 package tabian.com.instagramclone2.Utils;
 
+import android.accounts.Account;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 import tabian.com.instagramclone2.Home.HomeActivity;
+import tabian.com.instagramclone2.Profile.AccountSettingsActivity;
 import tabian.com.instagramclone2.R;
 import tabian.com.instagramclone2.models.Photo;
 import tabian.com.instagramclone2.models.User;
@@ -80,7 +83,7 @@ public class FirebaseMethods {
                     .child(filePaths.FIREBASE_IMAGE_STORAGE + "/" + user_id + "/photo" + (count + 1));
 
             //convert image url to bitmap
-            Bitmap bm = ImageManager.getBitmap(imgUrl);
+            Bitmap  bm = ImageManager.getBitmap(imgUrl);
             byte[] bytes = ImageManager.getBytesFromBitmap(bm, 100);
 
             UploadTask uploadTask = null;
@@ -124,6 +127,11 @@ public class FirebaseMethods {
         //case new profile photo
         else if(photoType.equals(mContext.getString(R.string.profile_photo))){
             Log.d(TAG, "uploadNewPhoto: uploading new PROFILE photo");
+
+            ((AccountSettingsActivity)mContext).setViewPager(
+                    ((AccountSettingsActivity)mContext).pagerAdapter
+                            .getFragmentNumber(mContext.getString(R.string.edit_profile_fragment))
+            );
 
             String user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
             StorageReference storageReference = mStorageReference
