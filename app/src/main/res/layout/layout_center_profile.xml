@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/relLayout1"
-            android:background="@drawable/white_grey_border_bottom">
+            android:background="@color/white">
 
             <LinearLayout
                 android:id="@+id/linLayout"
@@ -63,7 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/linLayout"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="20dp"
+                android:background="@drawable/white_grey_border_bottom">
 
                 <TextView
                     android:id="@+id/display_name"
@@ -101,7 +102,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/linLayout2"
-                android:layout_marginBottom="50dp">
+                android:layout_marginBottom="50dp"
+                >
 
                 <GridView
                     android:id="@+id/gridView"
