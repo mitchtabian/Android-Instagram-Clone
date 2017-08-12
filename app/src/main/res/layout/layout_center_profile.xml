@@ -38,7 +38,7 @@
                         android:layout_height="80dp"
                         android:layout_centerVertical="true"
                         app:civ_border_color="@color/black"
-                        app:civ_border_width="2dp"/>
+                        app:civ_border_width="0.5dp"/>
 
 
                 </RelativeLayout>
