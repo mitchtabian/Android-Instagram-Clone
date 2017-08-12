@@ -139,8 +139,31 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/iq2ZTH'> Upload New Profile Photo to Firebase Storage</a></li>
 
+<li><a href='https://goo.gl/1tNrCV'> Fixing the Navigation</a></li>
+
+<li><a href='https://goo.gl/PrZP7r'> New Profile Photo Using Camera</a></li>
+
+<li><a href='https://goo.gl/yTZtnM'> Share Photo using Camera</a></li>
+
+<li><a href='https://goo.gl/bZc1qN'> Populating User Profile Gridview</a></li>
+
+<li><a href='https://goo.gl/4swnKB'> Activity Animations</a></li>
+
+<li><a href='https://goo.gl/3byc52'> Post Viewing Layout (part1)</a></li>
+
+<li><a href='https://goo.gl/a2HPfb'> Post Viewing Layout (part2)</a></li>
+
 <li>More coming every week!</li>
 </ol>
+
+
+
+
+
+
+
+
+
 
 
 
