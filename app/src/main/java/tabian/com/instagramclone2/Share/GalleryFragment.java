@@ -115,18 +115,18 @@ public class GalleryFragment extends Fragment {
         FilePaths filePaths = new FilePaths();
 
         //check for other folders indide "/storage/emulated/0/pictures"
-        if(FileSearch.getDirectoryPaths(filePaths.PICTURES) != null){
+        if (FileSearch.getDirectoryPaths(filePaths.PICTURES) != null) {
             directories = FileSearch.getDirectoryPaths(filePaths.PICTURES);
         }
-        ArrayList<String> directoryNames = new ArrayList<>();
-        for(int i = 0; i < directories.size(); i++){
+        directories.add(filePaths.CAMERA);
 
+        ArrayList<String> directoryNames = new ArrayList<>();
+        for (int i = 0; i < directories.size(); i++) {
+            Log.d(TAG, "init: directory: " + directories.get(i));
             int index = directories.get(i).lastIndexOf("/");
             String string = directories.get(i).substring(index);
             directoryNames.add(string);
         }
-
-        directories.add(filePaths.CAMERA);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_spinner_item, directoryNames);
