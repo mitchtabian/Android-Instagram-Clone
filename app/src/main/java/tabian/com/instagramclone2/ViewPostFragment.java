@@ -1,5 +1,6 @@
 package tabian.com.instagramclone2;
 
+
 import android.media.Image;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -12,10 +13,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import tabian.com.instagramclone2.Utils.BottomNavigationViewHelper;
 import tabian.com.instagramclone2.Utils.SquareImageView;
@@ -71,8 +81,43 @@ public class ViewPostFragment extends Fragment {
         }
 
         setupBottomNavigationView();
+        setupWidgets();
 
         return view;
+    }
+
+    private void setupWidgets(){
+        String timestampDiff = getTimestampDifference();
+        if(!timestampDiff.equals("0")){
+                mTimestamp.setText(timestampDiff + " DAYS AGO");
+            }else{
+                mTimestamp.setText("TODAY");
+        }
+    }
+
+    /**
+     * Returns a string representing the number of days ago the post was made
+     * @return
+     */
+    private String getTimestampDifference(){
+        Log.d(TAG, "getTimestampDifference: getting timestamp difference.");
+
+        String difference = "";
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.CANADA);
+        sdf.setTimeZone(TimeZone.getTimeZone("Canada/Pacific"));//google 'android list of timezones'
+        Date today = c.getTime();
+        sdf.format(today);
+        Date timestamp;
+        final String photoTimestamp = mPhoto.getDate_created();
+        try{
+            timestamp = sdf.parse(photoTimestamp);
+            difference = String.valueOf(Math.round(((today.getTime() - timestamp.getTime()) / 1000 / 60 / 60 / 24 )));
+        }catch (ParseException e){
+            Log.e(TAG, "getTimestampDifference: ParseException: " + e.getMessage() );
+            difference = "0";
+        }
+        return difference;
     }
 
     /**
