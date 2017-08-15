@@ -153,6 +153,12 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/a2HPfb'> Post Viewing Layout (part2)</a></li>
 
+<li><a href='https://goo.gl/3bJ78v'> GridImage Selection Interface</a></li>
+
+<li><a href='https://goo.gl/MTJN4g'> Retrieving Post Image From Bundle</a></li>
+
+<li><a href='https://goo.gl/6rdyox'> Image Post Date</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
