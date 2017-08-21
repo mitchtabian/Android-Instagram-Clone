@@ -1,29 +1,15 @@
 package tabian.com.instagramclone2.Profile;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
-
-import java.util.ArrayList;
-
 import tabian.com.instagramclone2.R;
-import tabian.com.instagramclone2.Utils.BottomNavigationViewHelper;
-import tabian.com.instagramclone2.Utils.GridImageAdapter;
-import tabian.com.instagramclone2.Utils.UniversalImageLoader;
-import tabian.com.instagramclone2.ViewPostFragment;
 import tabian.com.instagramclone2.models.Photo;
 
 /**
