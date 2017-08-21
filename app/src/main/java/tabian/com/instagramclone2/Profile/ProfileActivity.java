@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import tabian.com.instagramclone2.R;
+import tabian.com.instagramclone2.Utils.ViewPostFragment;
 import tabian.com.instagramclone2.models.Photo;
 
 /**
@@ -28,6 +29,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileFragmen
         Bundle args = new Bundle();
         args.putParcelable(getString(R.string.photo), photo);
         args.putInt(getString(R.string.activity_number), activityNumber);
+
         fragment.setArguments(args);
 
         FragmentTransaction transaction  = getSupportFragmentManager().beginTransaction();
