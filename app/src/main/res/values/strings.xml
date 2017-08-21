@@ -25,6 +25,7 @@
     <string name="field_website">website</string>
     <string name="field_description">description</string>
     <string name="field_phone_number">phone_number</string>
+    <string name="field_user_id">user_id</string>
 
     <!-- photo types -->
     <string name="new_photo">new_photo</string>

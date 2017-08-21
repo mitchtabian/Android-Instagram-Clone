@@ -14,9 +14,11 @@ public class UserAccountSettings {
     private String profile_photo;
     private String username;
     private String website;
+    private String user_id;
 
-    public UserAccountSettings(String description, String display_name, long followers, long following,
-                               long posts, String profile_photo, String username, String website) {
+    public UserAccountSettings(String description, String display_name, long followers,
+                               long following, long posts, String profile_photo, String username,
+                               String website, String user_id) {
         this.description = description;
         this.display_name = display_name;
         this.followers = followers;
@@ -25,9 +27,19 @@ public class UserAccountSettings {
         this.profile_photo = profile_photo;
         this.username = username;
         this.website = website;
+        this.user_id = user_id;
     }
+
     public UserAccountSettings() {
 
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 
     public String getDescription() {

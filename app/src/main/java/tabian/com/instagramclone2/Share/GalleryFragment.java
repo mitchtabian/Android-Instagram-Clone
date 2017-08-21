@@ -167,6 +167,7 @@ public class GalleryFragment extends Fragment {
         setImage(imgURLs.get(0), galleryImage, mAppend);
         mSelectedImage = imgURLs.get(0);
 
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
