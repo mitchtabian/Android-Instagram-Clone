@@ -159,6 +159,16 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/6rdyox'> Image Post Date</a></li>
 
+<li><a href='https://goo.gl/xF1RKF'> Query Photo Details</a></li>
+
+<li><a href='https://goo.gl/cCbDuq'> Likes Toggle Part1</a></li>
+
+<li><a href='https://goo.gl/GRgVyQ'> Likes Toggle Part2</a></li>
+
+<li><a href='https://goo.gl/Fn39Cr'> Likes Toggle Part3</a></li>
+
+<li><a href='https://goo.gl/5kaxZ2'> Likes Toggle Part4</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
