@@ -27,6 +27,13 @@
     <string name="field_phone_number">phone_number</string>
     <string name="field_user_id">user_id</string>
     <string name="field_likes">likes</string>
+    <string name="field_caption">caption</string>
+    <string name="field_date_created">date_created</string>
+    <string name="field_photo_id">photo_id</string>
+    <string name="field_tags">tags</string>
+    <string name="field_image_path">image_path</string>
+
+
 
     <!-- photo types -->
     <string name="new_photo">new_photo</string>
