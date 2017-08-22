@@ -17,9 +17,16 @@ import tabian.com.instagramclone2.models.Photo;
  * Created by User on 5/28/2017.
  */
 
-public class ProfileActivity extends AppCompatActivity implements ProfileFragment.OnGridImageSelectedListener{
+public class ProfileActivity extends AppCompatActivity implements
+        ProfileFragment.OnGridImageSelectedListener ,
+        ViewPostFragment.OnCommentThreadSelectedListener{
 
     private static final String TAG = "ProfileActivity";
+
+    @Override
+    public void onCommentThreadSelectedListener(Photo photo) {
+        
+    }
 
     @Override
     public void onGridImageSelected(Photo photo, int activityNumber) {
@@ -69,7 +76,6 @@ public class ProfileActivity extends AppCompatActivity implements ProfileFragmen
         transaction.addToBackStack(getString(R.string.profile_fragment));
         transaction.commit();
     }
-
 
 
 

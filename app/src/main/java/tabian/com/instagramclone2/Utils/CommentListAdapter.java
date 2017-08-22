@@ -1,6 +1,7 @@
 package tabian.com.instagramclone2.Utils;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,6 +15,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,6 +36,8 @@ import java.util.TimeZone;
 import de.hdodenhof.circleimageview.CircleImageView;
 import tabian.com.instagramclone2.R;
 import tabian.com.instagramclone2.models.Comment;
+import tabian.com.instagramclone2.models.User;
+import tabian.com.instagramclone2.models.UserAccountSettings;
 
 /**
  * Created by User on 8/22/2017.
@@ -54,7 +67,7 @@ public class CommentListAdapter extends ArrayAdapter<Comment> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         final ViewHolder holder;
 
@@ -85,8 +98,34 @@ public class CommentListAdapter extends ArrayAdapter<Comment> {
             holder.timestamp.setText("today");
         }
 
-        //set the username
-        
+        //set the username and profile image
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        Query query = reference
+                .child(mContext.getString(R.string.dbname_user_account_settings))
+                .orderByChild(mContext.getString(R.string.field_user_id))
+                .equalTo(getItem(position).getUser_id());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for ( DataSnapshot singleSnapshot :  dataSnapshot.getChildren()){
+                    holder.username.setText(
+                            singleSnapshot.getValue(UserAccountSettings.class).getUsername());
+
+                    ImageLoader imageLoader = ImageLoader.getInstance();
+
+                    imageLoader.displayImage(
+                            singleSnapshot.getValue(UserAccountSettings.class).getProfile_photo(),
+                            holder.profileImage);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d(TAG, "onCancelled: query cancelled.");
+            }
+        });
+
 
         return convertView;
     }
