@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import tabian.com.instagramclone2.R;
+import tabian.com.instagramclone2.Utils.ViewCommentsFragment;
 import tabian.com.instagramclone2.Utils.ViewPostFragment;
 import tabian.com.instagramclone2.models.Photo;
 
@@ -25,7 +26,17 @@ public class ProfileActivity extends AppCompatActivity implements
 
     @Override
     public void onCommentThreadSelectedListener(Photo photo) {
-        
+        Log.d(TAG, "onCommentThreadSelectedListener:  selected a comment thread");
+
+        ViewCommentsFragment fragment = new ViewCommentsFragment();
+        Bundle args = new Bundle();
+        args.putParcelable(getString(R.string.photo), photo);
+        fragment.setArguments(args);
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, fragment);
+        transaction.addToBackStack(getString(R.string.view_comments_fragment));
+        transaction.commit();
     }
 
     @Override

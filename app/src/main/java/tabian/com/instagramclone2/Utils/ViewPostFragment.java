@@ -363,7 +363,7 @@ public class ViewPostFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: navigating back");
-
+                mOnCommentThreadSelectedListener.onCommentThreadSelectedListener(mPhoto);
             }
         });
 

@@ -126,6 +126,16 @@ public class CommentListAdapter extends ArrayAdapter<Comment> {
             }
         });
 
+        try{
+            if(position == 0){
+                holder.like.setVisibility(View.GONE);
+                holder.likes.setVisibility(View.GONE);
+                holder.reply.setVisibility(View.GONE);
+            }
+        }catch (NullPointerException e){
+            Log.e(TAG, "getView: NullPointerException: " + e.getMessage() );
+        }
+
 
         return convertView;
     }
