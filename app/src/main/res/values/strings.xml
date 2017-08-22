@@ -33,6 +33,7 @@
     <string name="field_photo_id">photo_id</string>
     <string name="field_tags">tags</string>
     <string name="field_image_path">image_path</string>
+    <string name="field_comments">comments</string>
 
 
 
