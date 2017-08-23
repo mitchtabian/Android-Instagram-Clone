@@ -169,6 +169,20 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/5kaxZ2'> Likes Toggle Part4</a></li>
 
+<li><a href='https://goo.gl/T8UUE6'> Likes Toggle Part5</a></li>
+
+<li><a href='https://goo.gl/bzTqMP'> Testing Instagram Likes</a></li>
+
+<li><a href='https://goo.gl/z1Ve71'> Comments Layout</a></li>
+
+<li><a href='https://goo.gl/9QkStK'> Comments ListAdapter part1</a></li>
+
+<li><a href='https://goo.gl/A1fRbt'> Comments ListAdapter part2</a></li>
+
+<li><a href='https://goo.gl/PDWjup'> Displaying the First Comment</a></li>
+
+<li><a href='https://goo.gl/NrYk1L'> Inserting Comments</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
