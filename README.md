@@ -183,6 +183,8 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/NrYk1L'> Inserting Comments</a></li>
 
+<li><a href='https://goo.gl/NXoATT'> Reading Comments</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
