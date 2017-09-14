@@ -185,6 +185,10 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/NXoATT'> Reading Comments</a></li>
 
+<li><a href='https://goo.gl/3WL56A'> Finishing Comments (IMPORTANT)</a></li>
+
+<li><a href='https://goo.gl/nHN42P'> Search Activity Layout</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
