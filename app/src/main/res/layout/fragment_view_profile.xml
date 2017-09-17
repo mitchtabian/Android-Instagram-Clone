@@ -20,7 +20,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true">
 
-        <include layout="@layout/layout_center_profile"/>
+        <include layout="@layout/layout_center_view_profile"/>
 
     </RelativeLayout>
 

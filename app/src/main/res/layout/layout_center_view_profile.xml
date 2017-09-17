@@ -50,7 +50,7 @@
                     android:layout_marginStart="30dp"
                     android:layout_weight="75">
 
-                    <include layout="@layout/snippet_top_profile"/>
+                    <include layout="@layout/snippet_top_view_profile"/>
 
                 </RelativeLayout>
 
