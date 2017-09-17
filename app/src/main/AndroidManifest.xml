@@ -23,7 +23,9 @@
         </activity>
         <activity android:name="tabian.com.instagramclone2.Likes.LikesActivity"></activity>
         <activity android:name="tabian.com.instagramclone2.Profile.ProfileActivity"></activity>
-        <activity android:name="tabian.com.instagramclone2.Search.SearchActivity"></activity>
+        <activity android:name="tabian.com.instagramclone2.Search.SearchActivity"
+            android:windowSoftInputMode="adjustNothing">
+        </activity>
         <activity android:name="tabian.com.instagramclone2.Share.ShareActivity"></activity>
         <activity android:name="tabian.com.instagramclone2.Profile.AccountSettingsActivity"></activity>
         <activity android:name="tabian.com.instagramclone2.Login.RegisterActivity"></activity>

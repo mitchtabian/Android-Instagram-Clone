@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/relLayout1">
 
-        <include layout="@layout/snippet_top_profilebar"/>
+        <include layout="@layout/snippet_top_view_profilebar"/>
 
     </RelativeLayout>
 
@@ -18,7 +18,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/relLayout2"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relLayout1">
 
         <include layout="@layout/layout_center_view_profile"/>
 
