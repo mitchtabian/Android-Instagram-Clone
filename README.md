@@ -189,6 +189,16 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/nHN42P'> Search Activity Layout</a></li>
 
+<li><a href='https://goo.gl/CC1WvX'> Searching for Users</a></li>
+
+<li><a href='https://goo.gl/fFPB8M'> Viewing User Profiles</a></li>
+
+<li><a href='https://goo.gl/Wu6P9m'> View Profile Fragment</a></li>
+
+<li><a href='https://goo.gl/JfMbJW'> Following Users (part1)</a></li>
+
+<li><a href='https://goo.gl/4LF6aC'> Following Users (part2)</a></li>
+
 <li>More coming every week!</li>
 </ol>
 
