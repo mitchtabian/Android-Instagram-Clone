@@ -53,11 +53,13 @@
 
     <!-- Bundle arg names -->
     <string name="activity_number">activity_number</string>
+    <string name="bundle_photo">bundle_photo</string>
+    <string name="bundle_user_account_settings">bundle_user_account_settings</string>
 
     <!-- activity names -->
     <string name="profile_activity">Profile Activity</string>
     <string name="search_activity">Search Activity</string>
-
+    <string name="home_activity">Home Activity</string>
 
     <!-- strings -->
     <string name="gallery">GALLERY</string>
