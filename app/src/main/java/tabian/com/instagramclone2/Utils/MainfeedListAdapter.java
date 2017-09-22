@@ -24,7 +24,13 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import tabian.com.instagramclone2.R;
@@ -95,8 +101,14 @@ public class MainfeedListAdapter extends ArrayAdapter<Photo> {
             holder.detector = new GestureDetector(mContext, new GestureListener(holder));
             holder.users = new StringBuilder();
 
+            convertView.setTag(holder);
+
+        }else{
+            holder = (ViewHolder) convertView.getTag();
         }
 
+
+        
 
         return convertView;
     }
@@ -148,18 +160,18 @@ public class MainfeedListAdapter extends ArrayAdapter<Photo> {
                                     .removeValue();
 
                             mHolder.heart.toggleLike();
-                            getLikesString();
+                            getLikesString(mHolder);
                         }
                         //case2: The user has not liked the photo
                         else if(!mHolder.likeByCurrentUser){
                             //add new like
-                            addNewLike();
+                            addNewLike(mHolder);
                             break;
                         }
                     }
                     if(!dataSnapshot.exists()){
                         //add new like
-                        addNewLike();
+                        addNewLike(mHolder);
                     }
                 }
 
@@ -172,6 +184,184 @@ public class MainfeedListAdapter extends ArrayAdapter<Photo> {
             return true;
         }
     }
+
+    private void addNewLike(final ViewHolder holder){
+        Log.d(TAG, "addNewLike: adding new like");
+
+        String newLikeID = mReference.push().getKey();
+        Like like = new Like();
+        like.setUser_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+        mReference.child(mContext.getString(R.string.dbname_photos))
+                .child(holder.photo.getPhoto_id())
+                .child(mContext.getString(R.string.field_likes))
+                .child(newLikeID)
+                .setValue(like);
+
+        mReference.child(mContext.getString(R.string.dbname_user_photos))
+                .child(holder.photo.getUser_id())
+                .child(holder.photo.getPhoto_id())
+                .child(mContext.getString(R.string.field_likes))
+                .child(newLikeID)
+                .setValue(like);
+
+        holder.heart.toggleLike();
+        getLikesString(holder);
+    }
+
+    private void getLikesString(final ViewHolder holder){
+        Log.d(TAG, "getLikesString: getting likes string");
+
+        try{
+
+
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        Query query = reference
+                .child(mContext.getString(R.string.dbname_photos))
+                .child(holder.photo.getPhoto_id())
+                .child(mContext.getString(R.string.field_likes));
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                holder.users = new StringBuilder();
+                for(DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
+
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                    Query query = reference
+                            .child(mContext.getString(R.string.dbname_users))
+                            .orderByChild(mContext.getString(R.string.field_user_id))
+                            .equalTo(singleSnapshot.getValue(Like.class).getUser_id());
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for(DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
+                                Log.d(TAG, "onDataChange: found like: " +
+                                        singleSnapshot.getValue(User.class).getUsername());
+
+                                holder.users.append(singleSnapshot.getValue(User.class).getUsername());
+                                holder.users.append(",");
+                            }
+
+                            String[] splitUsers = holder.users.toString().split(",");
+
+                            if(holder.users.toString().contains(holder.user.getUsername() + ",")){//mitch, mitchell.tabian
+                                holder.likeByCurrentUser = true;
+                            }else{
+                                holder.likeByCurrentUser = false;
+                            }
+
+                            int length = splitUsers.length;
+                            if(length == 1){
+                                holder.likesString = "Liked by " + splitUsers[0];
+                            }
+                            else if(length == 2){
+                                holder.likesString = "Liked by " + splitUsers[0]
+                                        + " and " + splitUsers[1];
+                            }
+                            else if(length == 3){
+                                holder.likesString = "Liked by " + splitUsers[0]
+                                        + ", " + splitUsers[1]
+                                        + " and " + splitUsers[2];
+
+                            }
+                            else if(length == 4){
+                                holder.likesString = "Liked by " + splitUsers[0]
+                                        + ", " + splitUsers[1]
+                                        + ", " + splitUsers[2]
+                                        + " and " + splitUsers[3];
+                            }
+                            else if(length > 4){
+                                holder.likesString = "Liked by " + splitUsers[0]
+                                        + ", " + splitUsers[1]
+                                        + ", " + splitUsers[2]
+                                        + " and " + (splitUsers.length - 3) + " others";
+                            }
+                            Log.d(TAG, "onDataChange: likes string: " + holder.likesString);
+                            //setup likes string
+                            setupLikesString(holder, holder.likesString);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+                if(!dataSnapshot.exists()){
+                    holder.likesString = "";
+                    holder.likeByCurrentUser = false;
+                    //setup likes string
+                    setupLikesString(holder, holder.likesString);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        }catch (NullPointerException e){
+            Log.e(TAG, "getLikesString: NullPointerException: " + e.getMessage() );
+            holder.likesString = "";
+            holder.likeByCurrentUser = false;
+            //setup likes string
+            setupLikesString(holder, holder.likesString);
+        }
+    }
+
+    private void setupLikesString(final ViewHolder holder, String likesString){
+        Log.d(TAG, "setupLikesString: likes string:" + holder.likesString);
+
+        if(holder.likeByCurrentUser){
+            Log.d(TAG, "setupLikesString: photo is liked by current user");
+            holder.heartWhite.setVisibility(View.GONE);
+            holder.heartRed.setVisibility(View.VISIBLE);
+            holder.heartRed.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    return holder.detector.onTouchEvent(event);
+                }
+            });
+        }else{
+            Log.d(TAG, "setupLikesString: photo is not liked by current user");
+            holder.heartWhite.setVisibility(View.VISIBLE);
+            holder.heartRed.setVisibility(View.GONE);
+            holder.heartWhite.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    return holder.detector.onTouchEvent(event);
+                }
+            });
+        }
+        holder.likes.setText(likesString);
+    }
+
+    /**
+     * Returns a string representing the number of days ago the post was made
+     * @return
+     */
+    private String getTimestampDifference(Photo photo){
+        Log.d(TAG, "getTimestampDifference: getting timestamp difference.");
+
+        String difference = "";
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.CANADA);
+        sdf.setTimeZone(TimeZone.getTimeZone("Canada/Pacific"));//google 'android list of timezones'
+        Date today = c.getTime();
+        sdf.format(today);
+        Date timestamp;
+        final String photoTimestamp = photo.getDate_created();
+        try{
+            timestamp = sdf.parse(photoTimestamp);
+            difference = String.valueOf(Math.round(((today.getTime() - timestamp.getTime()) / 1000 / 60 / 60 / 24 )));
+        }catch (ParseException e){
+            Log.e(TAG, "getTimestampDifference: ParseException: " + e.getMessage() );
+            difference = "0";
+        }
+        return difference;
+    }
+
 }
 
 
