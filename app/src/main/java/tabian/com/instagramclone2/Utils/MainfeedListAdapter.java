@@ -123,13 +123,16 @@ public class MainfeedListAdapter extends ArrayAdapter<Photo> {
         //set the comment
         List<Comment> comments = getItem(position).getComments();
         holder.comments.setText("View all " + comments.size() + " comments");
-        holder.comment.setOnClickListener(new View.OnClickListener() {
+        holder.comments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: loading comment thread for " + getItem(position).getPhoto_id());
-                ((HomeActivity)mContext).onCommentThreadSelected(getItem(position), holder.settings);
+                ((HomeActivity)mContext).onCommentThreadSelected(getItem(position),
+                        mContext.getString(R.string.home_activity));
 
                 //going to need to do something else?
+                ((HomeActivity)mContext).hideLayout();
+
             }
         });
 
@@ -199,9 +202,11 @@ public class MainfeedListAdapter extends ArrayAdapter<Photo> {
                     holder.comment.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            ((HomeActivity)mContext).onCommentThreadSelected(getItem(position), holder.settings);
+                            ((HomeActivity)mContext).onCommentThreadSelected(getItem(position),
+                                    mContext.getString(R.string.home_activity));
 
                             //another thing?
+                            ((HomeActivity)mContext).hideLayout();
                         }
                     });
                 }
@@ -363,9 +368,6 @@ public class MainfeedListAdapter extends ArrayAdapter<Photo> {
         Log.d(TAG, "getLikesString: getting likes string");
 
         try{
-
-
-
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         Query query = reference
                 .child(mContext.getString(R.string.dbname_photos))
@@ -395,7 +397,7 @@ public class MainfeedListAdapter extends ArrayAdapter<Photo> {
 
                             String[] splitUsers = holder.users.toString().split(",");
 
-                            if(holder.users.toString().contains(holder.user.getUsername() + ",")){//mitch, mitchell.tabian
+                            if(holder.users.toString().contains(currentUsername + ",")){//mitch, mitchell.tabian
                                 holder.likeByCurrentUser = true;
                             }else{
                                 holder.likeByCurrentUser = false;
