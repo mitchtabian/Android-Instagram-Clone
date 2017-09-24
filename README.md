@@ -199,17 +199,17 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/4LF6aC'> Following Users (part2)</a></li>
 
-<li><a href=''> Fixing a Few Bugs</a></li>
+<li><a href='https://goo.gl/zhTqSF'> Fixing a Few Bugs</a></li>
 
-<li><a href=''> Mainfeed ListAdapter (part 1/2)</a></li>
+<li><a href='https://goo.gl/j8TFtk'> Mainfeed ListAdapter (part 1/2)</a></li>
 
-<li><a href=''> Mainfeed ListAdapter (part 2/2)</a></li>
+<li><a href='https://goo.gl/ejjmZu'> Mainfeed ListAdapter (part 2/2)</a></li>
 
-<li><a href=''> Displaying Posts in the Main Feed (part 1/3)</a></li>
+<li><a href='https://goo.gl/f2cBVJ'> Displaying Posts in the Main Feed (part 1/3)</a></li>
 
-<li><a href=''> Displaying Posts in the Main Feed (part 2/3)</a></li>
+<li><a href='https://goo.gl/9SYKS2'> Displaying Posts in the Main Feed (part 2/3)</a></li>
 
-<li><a href=''> Displaying Posts in the Main Feed (part 3/3)</a></li>
+<li><a href='https://goo.gl/82m8Yc'> Displaying Posts in the Main Feed (part 3/3)</a></li>
 
 <li>End?!</li>
 </ol>
