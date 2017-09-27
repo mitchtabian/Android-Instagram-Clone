@@ -24,13 +24,25 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import tabian.com.instagramclone2.Login.LoginActivity;
 import tabian.com.instagramclone2.R;
 import tabian.com.instagramclone2.Utils.BottomNavigationViewHelper;
+import tabian.com.instagramclone2.Utils.MainfeedListAdapter;
 import tabian.com.instagramclone2.Utils.SectionsPagerAdapter;
 import tabian.com.instagramclone2.Utils.UniversalImageLoader;
 import tabian.com.instagramclone2.Utils.ViewCommentsFragment;
 import tabian.com.instagramclone2.models.Photo;
 import tabian.com.instagramclone2.models.UserAccountSettings;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements
+        MainfeedListAdapter.OnLoadMoreItemsListener{
+
+    @Override
+    public void onLoadMoreItems() {
+        Log.d(TAG, "onLoadMoreItems: displaying more photos");
+        HomeFragment fragment = (HomeFragment)getSupportFragmentManager()
+                .findFragmentByTag("android:switcher:" + R.id.viewpager_container + ":" + mViewPager.getCurrentItem());
+        if(fragment != null){
+            fragment.displayMorePhotos();
+        }
+    }
 
     private static final String TAG = "HomeActivity";
     private static final int ACTIVITY_NUM = 0;
@@ -200,5 +212,6 @@ public class HomeActivity extends AppCompatActivity {
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
+
 
 }
