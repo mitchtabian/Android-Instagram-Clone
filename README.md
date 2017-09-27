@@ -211,6 +211,8 @@ things simple and condensed I will just use Firebase for everything. After all t
 
 <li><a href='https://goo.gl/82m8Yc'> Displaying Posts in the Main Feed (part 3/3)</a></li>
 
+<li><a href='https://goo.gl/E6hqLT'> ListView Pagination and Bug Fixes </a></li>
+
 <li>End?!</li>
 </ol>
 
