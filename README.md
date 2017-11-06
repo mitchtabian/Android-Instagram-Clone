@@ -4,8 +4,6 @@
 <h4>A step-by-step guide to build your own Instagram Clone</h4>
 <h4>Watch it here: <a href='https://codingwithmitch.com/courses/instagram-clone/' target='_blank'>Instagram Clone Course</a></h4>
 <hr>
-<p>The course outline is still not "set in stone." I'll be building it in modules so you can have check points if you want to take a break
-and come back to it in the future. At this point I'm guessing there will be 30-50 videos.</p>
 
 <p>We'll start by building almost the entire interface and then move onto the back-end.</p>
 <p>The back-end will be almost 100% Firebase as that will make it simply for the purposes of this course. </p>
