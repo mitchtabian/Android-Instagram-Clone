@@ -5,21 +5,16 @@
 <h4>Watch it here: <a href='https://codingwithmitch.com/courses/instagram-clone/' target='_blank'>Instagram Clone Course</a></h4>
 <hr>
 
-<p>We'll start by building almost the entire interface and then move onto the back-end.</p>
-<p>The back-end will be almost 100% Firebase as that will make it simply for the purposes of this course. </p>
-<p>If this were a real production app I would probably use:
-
+<p>
+In the course we'll be using:
 <ul>
-<li>Firebase for user management and authentication</li>
-<li>Amazon Web Services to store images and videos</li>
-<li>A server (website) SQL database for saving all other data. Take a look 
-<a href='https://github.com/Vheissu/Open-Source-Database-Schemas/blob/master/vheissu-instagram-schema.md' target='_blank'>here</a> for an outline of what 
-the database would roughly look like if you did that. (SQLite is probably fine)</li>
+  <li>Firebase Email Authentication</li>
+  <li>Firebase Database</li>
+  <li>Firebase Cloud-Storage</li>
 </ul>
 <p/>
 
-<p>That would require a <b>TON</b> more code. Setting up the server/website alone would probably be another 20 videos or so. So to keep
-things simple and condensed I will just use Firebase for everything. After all this is an Android Course, not a web development course.</p>
+<p>To keep things simple and condensed I'll be using Firebase for everything.</p>
 
 <h2>Lecture Source Code:</h2>
 <ol>
