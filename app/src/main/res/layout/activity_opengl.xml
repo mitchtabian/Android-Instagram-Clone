@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:id="@+id/parent_layout">
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/surface_container">
+
+        <view
+            class="tabian.com.instagramclone2.opengl.MyGLSurfaceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_gl_surfaceview"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linLayout"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--android:layout_width="25dp"-->
+            <!--android:layout_height="25dp"-->
+            <!--android:id="@+id/profile_image"-->
+            <!--android:src="@mipmap/ic_launcher"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginTop="25dp"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="13sp"-->
+            <!--android:id="@+id/username"-->
+            <!--android:text="mitch"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:textColor="#fff"-->
+            <!--android:shadowColor="@color/colorDarkGrey"/>-->
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linLayout2"
+        android:layout_below="@+id/linLayout"
+        android:layout_marginTop="10dp">
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

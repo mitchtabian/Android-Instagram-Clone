@@ -31,6 +31,7 @@ import tabian.com.instagramclone2.R;
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity";
+    private static final Boolean CHECK_IF_VERIFIED = false;
 
     //firebase
     private FirebaseAuth mAuth;
@@ -114,16 +115,24 @@ public class LoginActivity extends AppCompatActivity {
                                      }
                                      else{
                                          try{
-                                             if(user.isEmailVerified()){
+                                             if(CHECK_IF_VERIFIED){
+                                                 if(user.isEmailVerified()){
+                                                     Log.d(TAG, "onComplete: success. email is verified.");
+                                                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                                     startActivity(intent);
+                                                 }else{
+                                                     Toast.makeText(mContext, "Email is not verified \n check your email inbox.", Toast.LENGTH_SHORT).show();
+                                                     mProgressBar.setVisibility(View.GONE);
+                                                     mPleaseWait.setVisibility(View.GONE);
+                                                     mAuth.signOut();
+                                                 }
+                                             }
+                                             else{
                                                  Log.d(TAG, "onComplete: success. email is verified.");
                                                  Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                                  startActivity(intent);
-                                             }else{
-                                                 Toast.makeText(mContext, "Email is not verified \n check your email inbox.", Toast.LENGTH_SHORT).show();
-                                                 mProgressBar.setVisibility(View.GONE);
-                                                 mPleaseWait.setVisibility(View.GONE);
-                                                 mAuth.signOut();
                                              }
+
                                          }catch (NullPointerException e){
                                              Log.e(TAG, "onComplete: NullPointerException: " + e.getMessage() );
                                          }

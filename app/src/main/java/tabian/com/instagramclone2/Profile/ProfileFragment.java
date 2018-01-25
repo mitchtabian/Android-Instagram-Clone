@@ -21,6 +21,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -305,6 +306,10 @@ public class ProfileFragment extends Fragment {
         UserAccountSettings settings = userSettings.getSettings();
 
         UniversalImageLoader.setImage(settings.getProfile_photo(), mProfilePhoto, null, "");
+
+//        Glide.with(getActivity())
+//                .load(settings.getProfile_photo())
+//                .into(mProfilePhoto);
 
         mDisplayName.setText(settings.getDisplay_name());
         mUsername.setText(settings.getUsername());

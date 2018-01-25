@@ -24,15 +24,17 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import tabian.com.instagramclone2.Login.LoginActivity;
 import tabian.com.instagramclone2.R;
 import tabian.com.instagramclone2.Utils.BottomNavigationViewHelper;
-import tabian.com.instagramclone2.Utils.MainfeedListAdapter;
+import tabian.com.instagramclone2.Utils.FirebaseMethods;
+import tabian.com.instagramclone2.Utils.MainFeedListAdapter;
 import tabian.com.instagramclone2.Utils.SectionsPagerAdapter;
 import tabian.com.instagramclone2.Utils.UniversalImageLoader;
 import tabian.com.instagramclone2.Utils.ViewCommentsFragment;
 import tabian.com.instagramclone2.models.Photo;
-import tabian.com.instagramclone2.models.UserAccountSettings;
+import tabian.com.instagramclone2.opengl.AddToStoryDialog;
+import tabian.com.instagramclone2.opengl.NewStoryActivity;
 
 public class HomeActivity extends AppCompatActivity implements
-        MainfeedListAdapter.OnLoadMoreItemsListener{
+        MainFeedListAdapter.OnLoadMoreItemsListener{
 
     @Override
     public void onLoadMoreItems() {
@@ -47,6 +49,9 @@ public class HomeActivity extends AppCompatActivity implements
     private static final String TAG = "HomeActivity";
     private static final int ACTIVITY_NUM = 0;
     private static final int HOME_FRAGMENT = 1;
+    private static final int RESULT_ADD_NEW_STORY = 7891;
+    private final static int CAMERA_RQ = 6969;
+    private static final int REQUEST_ADD_NEW_STORY = 8719;
 
     private Context mContext = HomeActivity.this;
 
@@ -76,6 +81,16 @@ public class HomeActivity extends AppCompatActivity implements
 
     }
 
+    public void openNewStoryActivity(){
+        Intent intent = new Intent(this, NewStoryActivity.class);
+        startActivityForResult(intent, REQUEST_ADD_NEW_STORY);
+    }
+
+    public void showAddToStoryDialog(){
+        Log.d(TAG, "showAddToStoryDialog: showing add to story dialog.");
+        AddToStoryDialog dialog = new AddToStoryDialog();
+        dialog.show(getFragmentManager(), getString(R.string.dialog_add_to_story));
+    }
 
 
     public void onCommentThreadSelected(Photo photo, String callingActivity){
@@ -112,6 +127,36 @@ public class HomeActivity extends AppCompatActivity implements
         super.onBackPressed();
         if(mFrameLayout.getVisibility() == View.VISIBLE){
             showLayout();
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d(TAG, "onActivityResult: incoming result.");
+        // Received recording or error from MaterialCamera
+
+        if (requestCode == REQUEST_ADD_NEW_STORY) {
+            Log.d(TAG, "onActivityResult: incoming new story.");
+            if (resultCode == RESULT_ADD_NEW_STORY) {
+                Log.d(TAG, "onActivityResult: got the new story.");
+                Log.d(TAG, "onActivityResult: data type: " + data.getType());
+
+                final HomeFragment fragment = (HomeFragment) getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.viewpager_container + ":" + 1);
+                if (fragment != null) {
+
+                    FirebaseMethods firebaseMethods = new FirebaseMethods(this);
+                    firebaseMethods.uploadNewStory(data, fragment);
+
+                }
+                else{
+                    Log.d(TAG, "onActivityResult: could not communicate with home fragment.");
+                }
+
+
+
+            }
         }
     }
 

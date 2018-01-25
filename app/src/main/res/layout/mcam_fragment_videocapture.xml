@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<RelativeLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:id="@+id/rootFrame"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:foreground="?selectableItemBackground"-->
+    <!--&gt;-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!--<include-->
+        <!--layout="@layout/mcam_include_camera_preview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_above="@+id/controlsFrame" />-->
+
+    <include
+        layout="@layout/mcam_include_camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/controlsFrame"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:elevation="@dimen/mcam_toolbar_elevation"-->
+        <!--android:paddingBottom="@dimen/mcam_content_inset_less"-->
+        <!--android:paddingLeft="@dimen/mcam_content_inset"-->
+        <!--android:paddingRight="@dimen/mcam_content_inset"-->
+        <!--android:paddingTop="@dimen/mcam_content_inset_less"-->
+        <!--tools:ignore="UnusedAttribute"-->
+        <!--&gt;-->
+
+    <RelativeLayout
+        android:id="@+id/controlsFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:elevation="@dimen/mcam_toolbar_elevation"
+        android:paddingBottom="@dimen/mcam_content_inset_less"
+        android:paddingLeft="@dimen/mcam_content_inset"
+        android:paddingRight="@dimen/mcam_content_inset"
+        android:paddingTop="@dimen/mcam_content_inset_less"
+        tools:ignore="UnusedAttribute"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:id="@+id/controlsLayout"
+            android:layout_above="@+id/video_toggle_layout"
+            android:layout_marginBottom="10dp">
+
+
+            <ImageButton
+                android:id="@+id/gallery"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/mcam_content_inset_less"
+                android:scaleType="fitXY"
+                android:visibility="visible"
+                tools:ignore="ContentDescription"
+                android:layout_marginLeft="10dp"
+                />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/flash_container">
+
+                <ImageButton
+                    android:id="@+id/flashStillshot"
+                    android:layout_width="@dimen/mcam_action_icon_size_smaller"
+                    android:layout_height="@dimen/mcam_action_icon_size_smaller"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/mcam_circle_selector"
+                    android:padding="@dimen/mcam_content_inset_less"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/mcam_action_flash"/>
+
+
+                <ImageButton
+                    android:id="@+id/flashVideo"
+                    android:layout_width="@dimen/mcam_action_icon_size_smaller"
+                    android:layout_height="@dimen/mcam_action_icon_size_smaller"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/mcam_circle_selector"
+                    android:padding="@dimen/mcam_content_inset_less"
+                    android:scaleType="fitXY"
+                    android:visibility="visible"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/mcam_action_flash_off"/>
+
+            </RelativeLayout>
+
+
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:background="@drawable/circle_opaque"
+                android:id="@+id/video_button_container">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:background="@drawable/circle_white">
+
+                    <ImageButton
+                        android:id="@+id/videoButton"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/mcam_circle_selector"
+                        android:padding="5dp"
+                        android:scaleType="fitXY"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/mcam_action_capture" />
+
+
+                    <ImageButton
+                        android:id="@+id/stillshot"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/mcam_circle_selector"
+                        android:padding="@dimen/mcam_content_inset_less"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/mcam_action_stillshot" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/stillshotLayout"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="10dp"-->
+                <!--android:background="@drawable/circle_white"-->
+                <!--android:visibility="gone">-->
+
+                <!--<ImageButton-->
+                    <!--android:id="@+id/stillshot"-->
+                    <!--android:layout_width="@dimen/mcam_action_icon_size"-->
+                    <!--android:layout_height="@dimen/mcam_action_icon_size"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:background="@drawable/mcam_circle_selector"-->
+                    <!--android:padding="@dimen/mcam_content_inset_less"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:visibility="gone"-->
+                    <!--tools:ignore="ContentDescription"-->
+                    <!--tools:src="@drawable/mcam_action_stillshot" />-->
+
+            <!--</RelativeLayout>-->
+
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+            <ImageButton
+                android:id="@+id/facing"
+                android:layout_width="@dimen/mcam_action_icon_size_smaller"
+                android:layout_height="@dimen/mcam_action_icon_size_smaller"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/mcam_circle_selector"
+                android:padding="@dimen/mcam_content_inset_less"
+                android:scaleType="fitXY"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/mcam_camera_front" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" >
+            </Space>
+
+
+            <TextView
+                android:id="@+id/recordDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/mcam_defaultDuration"
+                android:textColor="#fff"
+                android:textSize="@dimen/mcam_regular_content_fontsize"
+                android:layout_marginRight="10dp"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/video_toggle_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_toLeftOf="@id/video_switch"
+                android:text="Video"
+                android:textColor="#fff"
+                android:layout_marginRight="5dp"/>
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/video_switch"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_toRightOf="@id/video_switch"
+                android:text="Picture"
+                android:textColor="#fff"
+                android:layout_marginRight="5dp"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/delayStartCountdown"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:background="#80000000"-->
+        <!--android:fontFamily="sans-serif-medium"-->
+        <!--android:padding="@dimen/mcam_content_inset_double"-->
+        <!--android:text="5"-->
+        <!--android:textColor="#fff"-->
+        <!--android:textSize="@dimen/mcam_regular_header_fontsize"-->
+        <!--tools:ignore="HardcodedText,UnusedAttribute" />-->
+
+
+
+
+</RelativeLayout>
