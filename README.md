@@ -209,19 +209,3 @@ In the course we'll be using:
 <li>End?!</li>
 </ol>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
