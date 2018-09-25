@@ -3,9 +3,20 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <ListView
+    <com.eschao.android.widget.elasticlistview.ElasticListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listView"></ListView>
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@null"
+        android:cacheColorHint="#00000000"
+        android:listSelector="#00000000"
+        android:dividerHeight="1px"
+        android:scrollbars="none"
+        android:id="@+id/listView"
+        android:overScrollMode="never"
+        android:fadingEdge="none"
+        android:divider="@null"
+        />
 
 </RelativeLayout>

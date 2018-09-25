@@ -49,14 +49,14 @@ import tabian.com.instagramclone2.models.UserAccountSettings;
  * Created by User on 9/22/2017.
  */
 
-public class MainfeedListAdapter extends ArrayAdapter<Photo> {
+public class MainFeedListAdapter extends ArrayAdapter<Photo> {
 
     public interface OnLoadMoreItemsListener{
         void onLoadMoreItems();
     }
     OnLoadMoreItemsListener mOnLoadMoreItemsListener;
 
-    private static final String TAG = "MainfeedListAdapter";
+    private static final String TAG = "MainFeedListAdapter";
 
     private LayoutInflater mInflater;
     private int mLayoutResource;
@@ -64,7 +64,7 @@ public class MainfeedListAdapter extends ArrayAdapter<Photo> {
     private DatabaseReference mReference;
     private String currentUsername = "";
 
-    public MainfeedListAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Photo> objects) {
+    public MainFeedListAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Photo> objects) {
         super(context, resource, objects);
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mLayoutResource = resource;
@@ -72,7 +72,7 @@ public class MainfeedListAdapter extends ArrayAdapter<Photo> {
         mReference = FirebaseDatabase.getInstance().getReference();
 
 //        for(Photo photo: objects){
-//            Log.d(TAG, "MainfeedListAdapter: photo id: " + photo.getPhoto_id());
+//            Log.d(TAG, "MainFeedListAdapter: photo id: " + photo.getPhoto_id());
 //        }
     }
 
