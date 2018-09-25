@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="55dp"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:src="@drawable/instagram_logo"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="40dp"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:id="@+id/input_email"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:id="@+id/input_password"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:text="Login"
+        android:id="@+id/btn_login"
+        android:padding="12dp"
+        android:background="@drawable/white_rounded_button"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="No account yet? Create one"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:id="@+id/link_signup"
+        android:textColor="@color/link_blue"/>
+
+</LinearLayout>
+
+    <ProgressBar
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/progressBar"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please wait..."
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_alignBottom="@+id/progressBar"
+        android:layout_alignRight="@+id/progressBar"
+        android:layout_alignLeft="@+id/progressBar"
+        android:id="@+id/pleaseWait"/>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

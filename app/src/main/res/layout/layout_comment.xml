@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:background="@color/white">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/comment_profile_image"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_android"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="0.5dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relLayout1"
+        android:layout_toRightOf="@+id/comment_profile_image"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/grey_border_bottom">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="20dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mitch.tabian"
+                android:id="@+id/comment_username"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="this is a comment"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_toRightOf="@+id/comment_username"
+                android:id="@+id/comment"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 d"
+                android:textColor="@color/grey"
+                android:textSize="14sp"
+                android:id="@+id/comment_time_posted"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_below="@+id/comment"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20 likes"
+                android:textStyle="bold"
+                android:textColor="@color/grey"
+                android:textSize="14sp"
+                android:id="@+id/comment_likes"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_below="@+id/comment"
+                android:layout_toRightOf="@+id/comment_time_posted"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reply"
+                android:textStyle="bold"
+                android:textColor="@color/grey"
+                android:textSize="14sp"
+                android:id="@+id/comment_reply"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_below="@+id/comment"
+                android:layout_toRightOf="@+id/comment_likes"/>
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/comment_like"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_heart_white"
+            android:layout_centerVertical="true"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <solid android:color="#fff"/>
+            <size android:height="48dp"
+                  android:width="48dp"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/vector_heart_white"/>
+
+</layer-list>

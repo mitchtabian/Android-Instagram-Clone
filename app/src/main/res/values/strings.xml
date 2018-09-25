@@ -1,0 +1,133 @@
+<resources>
+    <string name="app_name">InstagramClone</string>
+
+    <!-- fragment names -->
+    <string name="edit_profile_fragment">Edit Profile</string>
+    <string name="view_post_fragment">View Post</string>
+    <string name="sign_out_fragment">Sign Out</string>
+    <string name="profile_fragment">Profile</string>
+    <string name="view_profile_fragment">ViewProfile</string>
+    <string name="view_comments_fragment">View Comments</string>
+
+    <!-- dialog names -->
+    <string name="confirm_password_dialog">ConfirmPaswordDialog</string>
+
+    <!-- Firebase messages -->
+    <string name="auth_failed">Failed to Authenticate</string>
+    <string name="auth_success">Authentication Success</string>
+
+    <!-- Firebase database fields -->
+    <string name="dbname_users">users</string>
+    <string name="dbname_user_account_settings">user_account_settings</string>
+    <string name="dbname_photos">photos</string>
+    <string name="dbname_user_photos">user_photos</string>
+    <string name="dbname_following">following</string>
+    <string name="dbname_followers">followers</string>
+    <string name="dbname_stories">stories</string>
+
+    <string name="field_username">username</string>
+    <string name="field_email">email</string>
+    <string name="field_display_name">display_name</string>
+    <string name="field_website">website</string>
+    <string name="field_description">description</string>
+    <string name="field_phone_number">phone_number</string>
+    <string name="field_user_id">user_id</string>
+    <string name="field_likes">likes</string>
+    <string name="field_caption">caption</string>
+    <string name="field_date_created">date_created</string>
+    <string name="field_photo_id">photo_id</string>
+    <string name="field_tags">tags</string>
+    <string name="field_image_path">image_path</string>
+    <string name="field_comments">comments</string>
+    <string name="field_comment">comment</string>
+    <string name="field_image_uri">image_uri</string>
+    <string name="field_video_uri">video_uri</string>
+    <string name="field_story_id">story_id</string>
+    <string name="field_views">views</string>
+    <string name="field_duration">duration</string>
+    <string name="field_profile_photo">profile_photo</string>
+    <string name="field_timestamp">timestamp</string>
+
+
+
+    <!-- photo types -->
+    <string name="new_photo">new_photo</string>
+    <string name="profile_photo">profile_photo</string>
+
+    <!-- Intent Extras -->
+    <string name="calling_activity">calling_activity</string>
+    <string name="selected_image">selected_image</string>
+    <string name="selected_bitmap">selected_bitmap</string>
+    <string name="return_to_fragment">return_to_fragment</string>
+    <string name="intent_user">intent_user</string>
+    <string name="user_stories">user_stories</string>
+
+    <!-- Bundle arg names -->
+    <string name="user_account_settings">user_account_settings</string>
+    <string name="activity_number">activity_number</string>
+    <string name="bundle_photo">bundle_photo</string>
+    <string name="bundle_user_account_settings">bundle_user_account_settings</string>
+
+    <!-- activity names -->
+    <string name="profile_activity">Profile Activity</string>
+    <string name="search_activity">Search Activity</string>
+    <string name="home_activity">Home Activity</string>
+
+    <!-- strings -->
+    <string name="gallery">GALLERY</string>
+    <string name="photo">PHOTO</string>
+    <string name="string_open_camera">Open Camera</string>
+    <string name="string_next">Next</string>
+    <string name="string_share">Share</string>
+
+    <!-- Dialog Names -->
+    <string name="dialog_add_to_story">AddToStoryDialog</string>
+
+    <!-- Easy Video Player Stuff -->
+    <string name="evp_submit">SUBMIT</string>
+    <string name="evp_retry">RETRY</string>
+
+    <!-- Spring Header Stuff -->
+    <string name="spring_header_behavior">tabian.com.instagramclonetest.springheader.SpringHeaderBehavior</string>
+    <string name="dependent_view_behavior">tabian.com.instagramclonetest.DependentViewBehavior</string>
+
+    <string name="simple_refresh_header_text_below_threshold">below fold</string>
+    <string name="simple_refresh_header_text_above_threshold">above folder</string>
+    <string name="simple_refresh_header_text_refreshing">refreshing...</string>
+
+    <!-- JSON values -->
+    <string name="bitmap">bitmap</string>
+
+    <!-- Error Messages -->
+    <string name="image_load_error">image_load_error</string>
+
+    <!-- JSON keys -->
+    <string name="media_type">media_type</string>
+    <string name="duration">duration</string>
+    <string name="encoded_bitmap">encoded_bitmap</string>
+    <string name="width_scale_factor">width_scale_factor</string>
+    <string name="height_scale_factor">height_scale_factor</string>
+    <string name="video_uri">video_uri</string>
+    <string name="surface_number">surface_number</string>
+    <string name="rotations">rotations</string>
+    <string name="resource_index">resource_index</string>
+    <string name="media_index">media_index</string>
+    <string name="media_source">media_source</string>
+
+    <!-- Material Camera Stuff -->
+    <string name="mcam_defaultDuration">00:00</string>
+    <string name="mcam_permissions_needed">Permissions Needed</string>
+    <string name="mcam_video_perm_warning">Permission to access your microphone and camera is needed, the camera will now close.</string>
+    <string name="mcam_retry">RETRY</string>
+    <string name="mcam_use_video">USE VIDEO</string>
+    <string name="mcam_use_stillshot">USE STILLSHOT</string>
+    <string name="mcam_portrait">Portrait</string>
+    <string name="mcam_portrait_warning">It\'s recommended that you record in landscape. Record in portrait?</string>
+    <string name="mcam_yes">Yes</string>
+    <string name="mcam_error">Error</string>
+    <string name="mcam_video_capture_unsupported">Your device does not support video capture.</string>
+    <string name="mcam_no_audio_access">You haven\'t given access to your microphone; no audio will be recorded.</string>
+    <string name="mcam_file_size_limit_reached">You\'ve reached the maximum file size!</string>
+    <string name="mcam_image_preview_error_title">Image preview error</string>
+    <string name="mcam_image_preview_error_message">Could not decode bitmap</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:id="@+id/tvConfirmSignout"
+            android:text="Are you sure you want to sign out?"/>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Sign Out"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:id="@+id/btnConfirmSignout"
+            android:layout_below="@+id/tvConfirmSignout"
+            android:background="@drawable/white_rounded_button"
+            android:layout_marginTop="20dp"/>
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signing Out..."
+        android:textSize="20sp"
+        android:layout_alignBottom="@+id/progressBar"
+        android:layout_alignRight="@+id/progressBar"
+        android:layout_alignLeft="@+id/progressBar"
+        android:textColor="@color/black"
+        android:id="@+id/tvSigningOut"/>
+
+</RelativeLayout>

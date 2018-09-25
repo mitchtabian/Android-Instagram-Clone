@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "tabian.com.instagramclone2"
+        minSdkVersion 18
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    //Design library for Coordinator Layout and Toolbars
+    compile 'com.android.support:design:27.0.2'
+    //ExifInterface support
+    compile 'com.android.support:exifinterface:27.0.2'
+    //design library for Coordinator Layout
+    compile 'com.android.support:design:27.0.2'
+    //Exo Player
+    compile 'com.google.android.exoplayer:exoplayer:2.6.0'
+    //cardview
+    compile 'com.android.support:cardview-v7:27.0.2'
+    //recyclerview
+    compile 'com.android.support:recyclerview-v7:27.0.2'
+    //BottomNavigationViewEx library
+    compile 'com.github.ittianyu:BottomNavigationViewEx:1.1.9'
+    //Circle ImageView
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //elastic header
+    compile 'com.github.eschao:android-ElasticListView:v1.0'
+    //material dialogs
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.4.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
+    implementation files('libs/aspectjrt-1.7.3 (1).jar')
+    //Universal image loader
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    //firebase authentication
+    compile 'com.google.firebase:firebase-auth:10.2.6'
+    //firebase database
+    compile 'com.google.firebase:firebase-database:10.2.6'
+    //firebase storage
+    compile 'com.google.firebase:firebase-storage:10.2.6'
+    compile files('libs/aspectjrt-1.7.3 (1).jar')
+}
+
+//Firebase
+apply plugin: 'com.google.gms.google-services'
+
+
