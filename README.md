@@ -1,8 +1,13 @@
+<a href='https://www.youtube.com/watch?v=qpJRgr6HzAw&list=PLgCYzUzKIBE9XqkckEJJA0I1wVKbUAOdv' target='_blank'>
 <img class='header-img' src='https://s3.amazonaws.com/codingwithmitch-static-and-media/media/instagram-clone/images/Instagram.png' />
+</a>
 
 <h1>Android Instagram Clone Course</h1>
 <h4>A step-by-step guide to build your own Instagram Clone</h4>
-<h4>Watch it here: <a href='https://codingwithmitch.com/courses/instagram-clone/' target='_blank'>Instagram Clone Course</a></h4>
+<h4>Watch it here: <a href='https://www.youtube.com/watch?v=qpJRgr6HzAw&list=PLgCYzUzKIBE9XqkckEJJA0I1wVKbUAOdv' target='_blank'>Instagram Clone Course</a></h4>
+<h4>WARNING: I do not maintain this code and I used many poor coding practices. 
+<br><br>
+For courses that use Android best practices see the courses on my website: <a href="https://codingwithmitch.com/courses/" target="_blank">CodingWithMitch.com</a></h4>
 <hr>
 
 <p>
