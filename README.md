@@ -1,3 +1,4 @@
+<strong style="color:red">WARNING: I do not maintain this code and there are MANY bad practice methods. I do not recommend copying any of this code.</strong>
 <a href='https://www.youtube.com/watch?v=qpJRgr6HzAw&list=PLgCYzUzKIBE9XqkckEJJA0I1wVKbUAOdv' target='_blank'>
 <img class='header-img' src='https://s3.amazonaws.com/codingwithmitch-static-and-media/media/instagram-clone/images/Instagram.png' />
 </a>
